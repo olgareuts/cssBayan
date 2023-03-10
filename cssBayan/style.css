@@ -50,7 +50,7 @@ input {
   border-top: 1px solid rgb(171, 187, 208);
 }
 .meme {
-  width: 50%;
+  width: 40%;
   margin-bottom: 5px;
 }
 .picture {
@@ -73,7 +73,7 @@ input {
 
 .accordion-item:hover .label >.accordion-body {
   height: auto;
-  transition: 1s;
+  transition: 1.5s;
   opacity: 1;
 }
 
@@ -97,12 +97,9 @@ input {
 }
 
 .accordion-body:active {
-  opacity: 0.5;
+  filter: invert(25%);
 }
 
-.accordion-body:active + {
-  opacity: 0.5;
-}
 
 
 
