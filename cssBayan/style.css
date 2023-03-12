@@ -24,7 +24,7 @@ input {
 }
 
 .accordion-container {
-  width: 70%;
+  width: 65%;
 }
 
 .accordion-body {
@@ -54,10 +54,8 @@ input {
 
 .picture {
   visibility: hidden;
-  background-image: url("../img/next.svg");
+  content: url("../img/plus.png");
   background-repeat: no-repeat;
-  width: 4vh;
-  height: 4vh;
   transform: rotate(90deg);
   transition: .3s;
 }
@@ -69,7 +67,7 @@ input {
 }
 
 .accordion input:checked + .label >.accordion-title >.picture{
-  transform: rotate(270deg);
+  transform: rotate(45deg);
 }
 
 .accordion input:checked + .label >.accordion-title {
@@ -84,65 +82,67 @@ input {
   color: #1866c5;
 }
 
-@media (min-width: 1200px) {
+.label:active .accordion-title >.picture {
+  content: url("../img/plus1.png");
+}
+
+@media (max-width: 1950px) {
   h1 {
     font-size: 2em;
+  }
+  h3 {
+    font-size: 1.3em;
+  }
+  .meme {
+    width: 40%;
+  }
+}
+
+@media (max-width: 900px) {
+  h1 {
+    font-size: 1.6em;
   }
   h3 {
     font-size: 1.2em;
   }
   .meme {
-    width: 40%;
-  }
-  .accordion:hover .accordion-title >.picture {
-    visibility: visible;
-  }
-
-  .accordion:hover .label >.accordion-title{
-    color: black;
-  }
-
-  .accordion-item:hover .label >.accordion-body {
-    height: auto;
-    transition: 1.5s;
-    opacity: 1;
-  }
-
-  .accordion-item:hover .accordion-title >.picture  {
-    transform: rotate(270deg);
-    transition: .3s;
-  }
-}
-
-@media (max-width: 1199px) {
-  h1 {
-    font-size: 1.6em;
-  }
-  h3 {
-    font-size: 1em;
-  }
-  .meme {
-    width: 50%;
+    width: 60%;
   }
   .picture {
     visibility: visible;
-    width: 2.5vh;
-    height: 2.5vh;
   }
   .accordion-container {
     width: 80%;
   }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 750px) {
   h1 {
     font-size: 1.5em;
   }
   h3 {
-    font-size: 0.9em;
+    font-size: 1em;
   }
   .meme {
-    width: 80%;
+    width: 100%;
+  }
+}
+
+@media (hover: hover) {
+  .accordion:hover .accordion-title >.picture {
+    visibility: visible;
+  }
+  .accordion:hover .label >.accordion-title{
+    color: black;
+  }
+  .accordion-item:hover .label >.accordion-body {
+    height: auto;
+    transition: 1.5s;
+    opacity: 1;
+  }
+  .accordion-item:hover .accordion-title >.picture  {
+    transform: rotate(45deg);
+    transition: .3s;
   }
 }
 
