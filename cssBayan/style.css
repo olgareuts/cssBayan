@@ -55,8 +55,7 @@ input {
 
 .picture {
   visibility: hidden;
-  content: url("../img/plus.png");
-  background-repeat: no-repeat;
+  content: url("./img/plus.png");
   transform: rotate(90deg);
   transition: .3s;
 }
@@ -79,12 +78,16 @@ input {
   filter: invert(25%);
 }
 
+.accordion-title:active + .accordion-body {
+  filter: invert(25%);
+}
+
 .label:active .accordion-title >h3 {
   color: #1866c5;
 }
 
 .label:active .accordion-title >.picture {
-  content: url("../img/plus1.png");
+  content: url("./img/plus1.png");
 }
 
 @media (max-width: 1950px) {
@@ -145,7 +148,6 @@ input {
   }
   .accordion-item:hover .accordion-title >.picture  {
     transform: rotate(45deg);
-    transition: .3s;
   }
 }
 
