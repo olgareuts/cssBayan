@@ -1,0 +1,156 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  min-height: 100vh;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+  background-color:rgb(241, 241, 229);
+}
+
+.main-title {
+  width: 70%;
+  padding: 3vh 0 2vh 0;
+}
+
+input {
+  display: none;
+}
+
+.accordion-container {
+  width: 65%;
+}
+
+.accordion-body {
+  height: 0;
+  text-align: center;
+  cursor: pointer;
+  overflow: hidden;
+  opacity: 0;
+  transition: 1s;
+}
+
+.accordion-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  padding: 2vh 0;
+  width: 100%;
+  color: #1866c5;
+  transition: color .35s;
+  border-top: 0.2vh solid rgb(171, 187, 208);
+}
+
+.meme {
+  width: 40%;
+  margin-bottom: 2.5vh;
+}
+
+.picture {
+  visibility: hidden;
+  content: url("./img/plus.png");
+  transform: rotate(90deg);
+  transition: .3s;
+}
+
+.accordion input:checked + .label >.accordion-body {
+  height: auto;
+  transition: .8s;
+  opacity: 1;
+}
+
+.accordion input:checked + .label >.accordion-title >.picture{
+  transform: rotate(45deg);
+}
+
+.accordion input:checked + .label >.accordion-title {
+  color: black;
+}
+
+.accordion-body:active {
+  filter: invert(25%);
+}
+
+.accordion-title:active + .accordion-body {
+  filter: invert(25%);
+}
+
+.label:active .accordion-title >h3 {
+  color: #1866c5;
+}
+
+.label:active .accordion-title >.picture {
+  content: url("./img/plus1.png");
+}
+
+@media (max-width: 1950px) {
+  h1 {
+    font-size: 1.8em;
+  }
+  h3 {
+    font-size: 1.2em;
+  }
+  .meme {
+    width: 40%;
+  }
+}
+
+@media (max-width: 900px) {
+  h1 {
+    font-size: 1.6em;
+  }
+  h3 {
+    font-size: 1.1em;
+  }
+  .meme {
+    width: 60%;
+  }
+  .picture {
+    visibility: visible;
+  }
+  .accordion-container {
+    width: 80%;
+  }
+}
+
+@media (max-width: 750px) {
+  h1 {
+    font-size: 1.5em;
+  }
+  h3 {
+    font-size: 1em;
+  }
+  .meme {
+    width: 100%;
+  }
+  .accordion-title {
+    padding: 1.6vh 0;
+  }
+}
+
+@media (hover: hover) {
+  .accordion:hover .accordion-title >.picture {
+    visibility: visible;
+  }
+  .accordion:hover .label >.accordion-title{
+    color: black;
+  }
+  .accordion-item:hover .label >.accordion-body {
+    height: auto;
+    opacity: 1;
+  }
+  .accordion-item:hover .accordion-title >.picture  {
+    transform: rotate(45deg);
+  }
+}
+
+
+
+
